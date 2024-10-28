@@ -1,10 +1,29 @@
 {
-	"name": "cf-warpweb",
-	"version": "1.0.0",
-	"main": "index.js",
-	"license": "MIT",
-	"dependencies": {
-		"cf-warp": "^1.3.0",
-		"express": "^4.17.1"
-	}
+  "name": "zurg3-cf-warp",
+  "version": "2.4.0",
+  "description": "Cloudflare WARP config generator for WireGuard and AmneziaWG",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zurg3/cf-warp.git"
+  },
+  "author": "maple3142",
+  "contributors": [
+    "zurg3"
+  ],
+  "bugs": {
+    "url": "https://github.com/zurg3/cf-warp/issues"
+  },
+  "homepage": "https://zurg3-cf-warp.glitch.me",
+  "license": "MIT",
+  "dependencies": {
+    "cf-warp": "1.4.0",
+    "express": "4.21.1"
+  },
+  "engines": {
+    "node": "16"
+  }
 }
