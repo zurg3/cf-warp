@@ -65,6 +65,13 @@ app.get('/warp.conf', async(req, res) => {
       `Jmax = 32`
     );
   }
+  else if (req.query.mode == 'awg_min') {
+    conf.push(
+      `Jc = 4`,
+      `Jmin = 2`,
+      `Jmax = 10`
+    );
+  }
   conf.push(
     `Address = ${combined.config.interface.addresses.v4}, ${combined.config.interface.addresses.v6}`,
     `DNS = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001`,
