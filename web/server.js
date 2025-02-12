@@ -45,7 +45,7 @@ app.get('/warp.conf', async(req, res) => {
     `PrivateKey = ${combined.privateKey}`,
     `# PublicKey = ${combined.publicKey}`
   );
-  if (req.query.mode == 'awg_full') {
+  if (req.query.mode === 'awg_full') {
     conf.push(
       `Jc = 120`,
       `Jmin = 23`,
@@ -58,14 +58,14 @@ app.get('/warp.conf', async(req, res) => {
       `H4 = 4`
     );
   }
-  else if (req.query.mode == 'awg_lite') {
+  else if (req.query.mode === 'awg_lite') {
     conf.push(
       `Jc = 4`,
       `Jmin = 8`,
       `Jmax = 32`
     );
   }
-  else if (req.query.mode == 'awg_min') {
+  else if (req.query.mode === 'awg_min') {
     conf.push(
       `Jc = 4`,
       `Jmin = 2`,
