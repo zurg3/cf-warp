@@ -1,0 +1,15 @@
+entrypoint = "server.js"
+modules = ["nodejs-14"]
+
+hidden = [".config", "package-lock.json"]
+
+[nix]
+channel = "stable-24_11"
+
+[deployment]
+run = "npm start"
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 3000
+externalPort = 80
