@@ -2,8 +2,8 @@
 
 > A simple CLI to get [WARP+](https://blog.cloudflare.com/announcing-warp-plus/) as [WireGuard](https://www.wireguard.com) configuration.
 
-> For people who just want an easy way to get a WireGuard of WARP, just download this file: [https://zurg3-cf-warp.glitch.me/warp.conf](https://zurg3-cf-warp.glitch.me/warp.conf).
-> Source code of the backend can be found [here](https://glitch.com/edit/#!/zurg3-cf-warp).
+> For people who just want an easy way to get a WireGuard of WARP, just download a config from here: [https://zurg3.github.io/cf-warp/](https://zurg3.github.io/cf-warp/).
+> Source code of the backend can be found [here](https://github.com/zurg3/cf-warp/tree/master/web).
 
 ## Usage
 
@@ -13,24 +13,30 @@ By using this, you agree the [Privacy Policy](https://www.cloudflare.com/applica
 
 #### Step 1
 
-Install `cf-warp` globally through yarn or npm.
+Install `cf-warp` globally through yarn
 
 ```bash
-yarn global add cf-warp # npm i -g cf-warp
+yarn global add cf-warp
+```
+
+Or npm
+
+```bash
+npm i -g cf-warp
 ```
 
 #### Step 2
 
-Initialize your Warp+ account by running `cf-warp` command.
+Initialize your WARP+ account by running `cf-warp` command.
 
 Example:
 
 ```bash
 $ cf-warp
-Your Warp credentials are located at "C:\Users\maple3142\.cf-warp\data.json", and WireGuard connection file is "C:\Users\maple3142\.cf-warp\cf-warp.conf".
-You currently have 1GB Warp+ quota.
-To get your current Warp+ quota, simply run "cf-warp".
-To increase your Warp+ quota by 10 GB, simply run "cf-warp 10".
+Your WARP credentials are located at "C:\Users\maple3142\.cf-warp\data.json", and WireGuard connection file is "C:\Users\maple3142\.cf-warp\cf-warp.conf".
+You currently have 1 GB WARP+ quota.
+To get your current WARP+ quota, simply run "cf-warp".
+To increase your WARP+ quota by 10 GB, simply run "cf-warp 10".
 ```
 
 #### Step 3
@@ -45,7 +51,7 @@ Go ahead to [releases](https://github.com/maple3142/cf-warp/releases) page and d
 
 #### Step 2
 
-Open your cmd/terminal and locate the binary you just downloaded, such as `cf-warp-win.exe` ...
+Open your cmd/terminal and locate the binary you just downloaded, such as `cf-warp-win.exe`.
 
 #### Step 3
 
@@ -61,7 +67,7 @@ docker run --rm -v ~/.cf-warp:/root/.cf-warp maple3142/cf-warp [args]
 
 ## FAQ
 
-### How does `cf-warp` get Warp+ quota for free?
+### How does `cf-warp` get WARP+ quota for free?
 
 It currently get quota by faking referrers since there is no way to pay for premium version outside of 1.1.1.1 app, but it is recommended to pay for it on your phone if you think their service is good.
 
@@ -72,7 +78,7 @@ It currently get quota by faking referrers since there is no way to pay for prem
 2. Copy that key, and run the command:
 
 ```bash
-cf-warp --license 1a2b3d4e-1a2b3d4e-1a2b3d4e #Your own license key goes here
+cf-warp --license 1a2b3d4e-1a2b3d4e-1a2b3d4e # Your own license key goes here
 ```
 
 3. When done, the current config should be sharing the same data quota as the mobile 1.1.1.1
