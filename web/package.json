@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/zurg3/cf-warp/issues"
   },
-  "homepage": "https://zurg3-cf-warp.glitch.me",
+  "homepage": "https://zurg3.github.io/cf-warp/",
   "license": "MIT",
   "dependencies": {
     "cf-warp": "1.4.0",
