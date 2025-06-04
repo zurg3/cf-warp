@@ -9,6 +9,8 @@ const info = require('cf-warp/lib/info');
 const ref = require('cf-warp/lib/ref');
 //const conf = require('cf-warp/lib/conf');
 
+const port = process.env.PORT || 3000;
+
 /*
 app.get('/', (req, res) => {
   res.send('<a href="/warp.conf">Download a WARP config now!</a>');
@@ -93,4 +95,6 @@ app.get('/warp.conf', async(req, res) => {
   res.send(conf);
 });
 
-app.listen(process.env.PORT);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
