@@ -1,10 +1,10 @@
-module.exports = ({privateKey, publicKey, config}, mode) => {
+module.exports = ({private_key, public_key, config}, mode) => {
   let conf = [];
 
   conf.push(
     `[Interface]`,
-    `PrivateKey = ${privateKey}`,
-    `# PublicKey = ${publicKey}`
+    `PrivateKey = ${private_key}`,
+    `# PublicKey = ${public_key}`
   );
   if (mode === 'awg_full') {
     conf.push(

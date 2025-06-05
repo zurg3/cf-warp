@@ -3,10 +3,10 @@ const app = express();
 
 const path = require('path');
 
-const generate = require('cf-warp/lib/generate');
-const register = require('cf-warp/lib/register');
-const info = require('cf-warp/lib/info');
-const ref = require('cf-warp/lib/ref');
+const generate = require('./lib/generate');
+const register = require('./lib/register');
+const info = require('./lib/info');
+const ref = require('./lib/ref');
 const conf = require('./lib/conf');
 
 const port = process.env.PORT || 3000;
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
-app.get('/warp.conf', async(req, res) => {
+app.get('/warp.conf', async (req, res) => {
   const keys = await generate();
   const data = await register(keys);
   const combined = Object.assign({}, keys, data, await info(data));
