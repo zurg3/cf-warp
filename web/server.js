@@ -7,6 +7,7 @@ const generate = require('cf-warp/lib/generate');
 const register = require('cf-warp/lib/register');
 const info = require('cf-warp/lib/info');
 const ref = require('cf-warp/lib/ref');
+const conf = require('./lib/conf');
 
 const port = process.env.PORT || 3000;
 
@@ -21,69 +22,9 @@ app.get('/warp.conf', async(req, res) => {
   const data = await register(keys);
   const combined = Object.assign({}, keys, data, await info(data));
 
-  let conf = [];
-
-  conf.push(
-    `[Interface]`,
-    `PrivateKey = ${combined.privateKey}`,
-    `# PublicKey = ${combined.publicKey}`
-  );
-  if (req.query.mode === 'awg_full') {
-    conf.push(
-      `Jc = 120`,
-      `Jmin = 23`,
-      `Jmax = 911`
-    );
-  }
-  else if (req.query.mode === 'awg_lite') {
-    conf.push(
-      `Jc = 4`,
-      `Jmin = 8`,
-      `Jmax = 32`
-    );
-  }
-  else if (req.query.mode === 'awg_min') {
-    conf.push(
-      `Jc = 4`,
-      `Jmin = 2`,
-      `Jmax = 10`
-    );
-  }
-  else if (req.query.mode === 'awg_max') {
-    conf.push(
-      `Jc = 128`,
-      `Jmin = 1`,
-      `Jmax = 1280`
-    );
-  }
-  if (req.query.mode === 'awg_full' || req.query.mode === 'awg_max') {
-    conf.push(
-      `S1 = 0`,
-      `S2 = 0`,
-      `H1 = 1`,
-      `H2 = 2`,
-      `H3 = 3`,
-      `H4 = 4`
-    );
-  }
-  conf.push(
-    `Address = ${combined.config.interface.addresses.v4}, ${combined.config.interface.addresses.v6}`,
-    `DNS = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001`,
-    `MTU = 1280`,
-    ``,
-    `[Peer]`,
-    `PublicKey = ${combined.config.peers[0].public_key}`,
-    `Endpoint = ${combined.config.peers[0].endpoint.host}`,
-    `# Endpoint = ${combined.config.peers[0].endpoint.v4}`,
-    `# Endpoint = ${combined.config.peers[0].endpoint.v6}`,
-    `AllowedIPs = 0.0.0.0/0, ::/0`
-  );
-
-  conf = conf.join('\n');
-
   if (req.query.dl === 'true') res.set('Content-Disposition', 'attachment; filename="warp.conf"');
   res.set('Content-Type', 'text/plain');
-  res.send(conf);
+  res.send(conf(combined, req.query.mode));
 });
 
 app.listen(port, () => {
