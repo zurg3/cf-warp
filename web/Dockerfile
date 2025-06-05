@@ -1,10 +1,10 @@
-FROM node:14-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 COPY package.json .
 RUN yarn
 COPY . .
 
-FROM gcr.io/distroless/nodejs:14
+FROM node:20-alpine
 WORKDIR /app
 COPY --from=build /app .
 ENV PORT=8080
