@@ -32,13 +32,7 @@ app.get('/warp.conf', async(req, res) => {
     conf.push(
       `Jc = 120`,
       `Jmin = 23`,
-      `Jmax = 911`,
-      `S1 = 0`,
-      `S2 = 0`,
-      `H1 = 1`,
-      `H2 = 2`,
-      `H3 = 3`,
-      `H4 = 4`
+      `Jmax = 911`
     );
   }
   else if (req.query.mode === 'awg_lite') {
@@ -53,6 +47,23 @@ app.get('/warp.conf', async(req, res) => {
       `Jc = 4`,
       `Jmin = 2`,
       `Jmax = 10`
+    );
+  }
+  else if (req.query.mode === 'awg_max') {
+    conf.push(
+      `Jc = 128`,
+      `Jmin = 1`,
+      `Jmax = 1280`
+    );
+  }
+  if (req.query.mode === 'awg_full' || req.query.mode === 'awg_max') {
+    conf.push(
+      `S1 = 0`,
+      `S2 = 0`,
+      `H1 = 1`,
+      `H2 = 2`,
+      `H3 = 3`,
+      `H4 = 4`
     );
   }
   conf.push(
