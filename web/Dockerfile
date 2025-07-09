@@ -1,7 +1,7 @@
 # docker build -t cf-warp .
 # docker run -d -p 8080:8080 cf-warp
 
-FROM node:16-alpine
+FROM node:20-alpine
 WORKDIR /app
 COPY package.json .
 RUN npm install
