@@ -1,40 +1,26 @@
 module.exports = ({private_key, public_key, config}, mode) => {
   let conf = [];
 
+  const junk = {
+    awg_full: {c: 120, min: 23, max: 911},
+    awg_lite: {c: 4, min: 8, max: 32},
+    awg_min: {c: 4, min: 2, max: 10},
+    awg_max: {c: 128, min: 1, max: 1280}
+  };
+
   conf.push(
     `[Interface]`,
     `PrivateKey = ${private_key}`,
     `# PublicKey = ${public_key}`
   );
-  if (mode === 'awg_full') {
+  if (['awg_full', 'awg_lite', 'awg_min', 'awg_max'].includes(mode)) {
     conf.push(
-      `Jc = 120`,
-      `Jmin = 23`,
-      `Jmax = 911`
+      `Jc = ${junk[mode].c}`,
+      `Jmin = ${junk[mode].min}`,
+      `Jmax = ${junk[mode].max}`
     );
   }
-  else if (mode === 'awg_lite') {
-    conf.push(
-      `Jc = 4`,
-      `Jmin = 8`,
-      `Jmax = 32`
-    );
-  }
-  else if (mode === 'awg_min') {
-    conf.push(
-      `Jc = 4`,
-      `Jmin = 2`,
-      `Jmax = 10`
-    );
-  }
-  else if (mode === 'awg_max') {
-    conf.push(
-      `Jc = 128`,
-      `Jmin = 1`,
-      `Jmax = 1280`
-    );
-  }
-  if (mode === 'awg_full' || mode === 'awg_max') {
+  if (['awg_full', 'awg_max'].includes(mode)) {
     conf.push(
       `S1 = 0`,
       `S2 = 0`,
