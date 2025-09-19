@@ -65,6 +65,20 @@ Use it just like `cf-warp` installed by npm.
 docker run --rm -v ~/.cf-warp:/root/.cf-warp maple3142/cf-warp [args]
 ```
 
+## AmneziaWG config modes
+
+|          | Full   | Lite   | Min   | Max    |
+| -------- | ------ | ------ | ----- | ------ |
+| **Jc**   | 120    | 4      | 4     | 128    |
+| **Jmin** | 23     | 8      | 2     | 1      |
+| **Jmax** | 911    | 32     | 10    | 1280   |
+| **S1**   | 0      | -      | -     | 0      |
+| **S2**   | 0      | -      | -     | 0      |
+| **H1**   | 1      | -      | -     | 1      |
+| **H2**   | 2      | -      | -     | 2      |
+| **H3**   | 3      | -      | -     | 3      |
+| **H4**   | 4      | -      | -     | 4      |
+
 ## FAQ
 
 ### How does `cf-warp` get WARP+ quota for free?
