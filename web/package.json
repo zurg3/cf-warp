@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "express": "5.1.0",
-    "tweetnacl": "1.0.3"
+    "tweetnacl": "1.0.3",
+    "fs-extra": "11.3.2"
   }
 }
