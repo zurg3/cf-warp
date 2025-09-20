@@ -4,7 +4,8 @@
   "description": "Cloudflare WARP config generator for WireGuard and AmneziaWG",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "cli": "node cli.js"
   },
   "repository": {
     "type": "git",
