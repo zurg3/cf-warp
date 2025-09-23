@@ -3,9 +3,13 @@
   "version": "2.6.1",
   "description": "Cloudflare WARP config generator for WireGuard and AmneziaWG",
   "main": "server.js",
+  "bin": {
+    "cf-warp": "cli.js"
+  },
   "scripts": {
     "start": "node server.js",
-    "cli": "node cli.js"
+    "cli": "node cli.js",
+    "build-cli": "pkg ."
   },
   "repository": {
     "type": "git",
@@ -27,5 +31,11 @@
   },
   "devDependencies": {
     "pkg": "5.8.1"
+  },
+  "pkg": {
+    "targets": [
+      "node18-win-x64",
+      "node18-linux-x64"
+    ]
   }
 }
