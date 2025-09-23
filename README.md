@@ -1,69 +1,68 @@
 # cf-warp
 
-> A simple CLI to get [WARP+](https://blog.cloudflare.com/announcing-warp-plus/) as [WireGuard](https://www.wireguard.com) configuration.
-
-> For people who just want an easy way to get a WireGuard of WARP, just download a config from here: [https://zurg3.github.io/cf-warp/](https://zurg3.github.io/cf-warp/).
-> Source code of the backend can be found [here](https://github.com/zurg3/cf-warp/tree/master/web).
+Cloudflare WARP config generator for WireGuard and AmneziaWG
 
 ## Usage
 
 By using this, you agree the [Privacy Policy](https://www.cloudflare.com/application/privacypolicy/) and [Terms of Service](https://www.cloudflare.com/application/terms/) of Cloudflare 1.1.1.1
 
-### With Node.js (Recommended)
+### Official Web version deployment
+
+The most easiest way to get a WARP config for WireGuard/AmneziaWG is download it from here: [https://zurg3.github.io/cf-warp/](https://zurg3.github.io/cf-warp/)
+
+### With Node.js (Web version)
 
 #### Step 1
 
-Install `cf-warp` globally through yarn
+Install and start the Web version
 
-```bash
-yarn global add cf-warp
 ```
-
-Or npm
-
-```bash
-npm i -g cf-warp
+$ git clone https://github.com/zurg3/cf-warp.git
+$ cd cf-warp/web
+$ npm install
+$ npm start
 ```
 
 #### Step 2
 
-Initialize your WARP+ account by running `cf-warp` command.
-
-Example:
-
-```bash
-$ cf-warp
-Your WARP credentials are located at "C:\Users\maple3142\.cf-warp\data.json", and WireGuard connection file is "C:\Users\maple3142\.cf-warp\cf-warp.conf".
-You currently have 1 GB WARP+ quota.
-To get your current WARP+ quota, simply run "cf-warp".
-To increase your WARP+ quota by 10 GB, simply run "cf-warp 10".
-```
+Open [http://localhost:3000](http://localhost:3000) in web browser
 
 #### Step 3
 
-Obtain `cf-warp.conf` from `~/.cf-warp/cf-warp.conf` and use it normally.
+Download a config you need
 
-### Without Node.js
+### With Node.js (CLI version)
 
 #### Step 1
 
-Go ahead to [releases](https://github.com/maple3142/cf-warp/releases) page and download a binary for your platform.
+Install and run the CLI version
+
+```
+$ git clone https://github.com/zurg3/cf-warp.git
+$ cd cf-warp/web
+$ npm install
+$ npm run cli
+```
 
 #### Step 2
 
-Open your cmd/terminal and locate the binary you just downloaded, such as `cf-warp-win.exe`.
+A config will be generated in the same directory
 
-#### Step 3
+## Ways to use the CLI version
 
-Use it just like `cf-warp` installed by npm.
+- `$ cf-warp [mode]`
+- `$ npm run cli [mode]`
+- `$ node cli.js [mode]`
 
-### With Docker
+## Available config modes
 
-#### Step 1
+- wg (WireGuard)
+- awg_full (AmneziaWG Full)
+- awg_lite (AmneziaWG Lite)
+- awg_min (AmneziaWG Min)
+- awg_max (AmneziaWG Max)
 
-```bash
-docker run --rm -v ~/.cf-warp:/root/.cf-warp maple3142/cf-warp [args]
-```
+If `mode` is not provided, a WireGuard config will be generated
 
 ## AmneziaWG config modes
 
@@ -78,29 +77,6 @@ docker run --rm -v ~/.cf-warp:/root/.cf-warp maple3142/cf-warp [args]
 | **H2**   | 2      | -      | -     | 2      |
 | **H3**   | 3      | -      | -     | 3      |
 | **H4**   | 4      | -      | -     | 4      |
-
-## FAQ
-
-### How does `cf-warp` get WARP+ quota for free?
-
-It currently get quota by faking referrers since there is no way to pay for premium version outside of 1.1.1.1 app, but it is recommended to pay for it on your phone if you think their service is good.
-
-### How do link this to a WARP+ license from the mobile 1.1.1.1 app?
-
-1. Find your license key on your mobile 1.1.1.1 app
-    - It should be under settings/account/key, in the form of "1a2b3d4e-1a2b3d4e-1a2b3d4e"
-2. Copy that key, and run the command:
-
-```bash
-cf-warp --license 1a2b3d4e-1a2b3d4e-1a2b3d4e # Your own license key goes here
-```
-
-3. When done, the current config should be sharing the same data quota as the mobile 1.1.1.1
-    - If you've paid on your phone, this config should enjoy unlimited data and WARP+.
-
-### IPv6 doesn't works in Linux by default
-
-Due to the private tunnel local address Linux needs `getaddrinfo` [configuration](https://github.com/maple3142/cf-warp/issues/9#issuecomment-716139339).
 
 ## Thanks
 
