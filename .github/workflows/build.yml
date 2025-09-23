@@ -27,7 +27,12 @@ jobs:
           cd web
           npm run build-cli
 
-      - name: Upload binaries
+      - name: Upload Windows binary
         uses: actions/upload-artifact@v4
         with:
-          path: web/cf-warp-*
+          path: web/cf-warp-win.exe
+
+      - name: Upload Linux binary
+        uses: actions/upload-artifact@v4
+        with:
+          path: web/cf-warp-linux
