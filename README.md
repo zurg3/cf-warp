@@ -48,7 +48,7 @@ $ npm run cli
 
 A config will be generated in the same directory
 
-## Ways to use the CLI version
+## Ways to run the CLI version
 
 - `$ cf-warp [mode]`
 - `$ npm run cli [mode]`
