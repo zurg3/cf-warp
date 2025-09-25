@@ -18,23 +18,19 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Install
-        run: |
-          cd web
-          npm install
+        run: npm install
 
       - name: Build
-        run: |
-          cd web
-          npm run build-cli
+        run: npm run build-cli
 
       - name: Upload Windows binary
         uses: actions/upload-artifact@v4
         with:
           name: cf-warp-win
-          path: web/cf-warp-win.exe
+          path: cf-warp-win.exe
 
       - name: Upload Linux binary
         uses: actions/upload-artifact@v4
         with:
           name: cf-warp-linux
-          path: web/cf-warp-linux
+          path: cf-warp-linux

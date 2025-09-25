@@ -18,7 +18,7 @@ Install and start the Web version
 
 ```
 $ git clone https://github.com/zurg3/cf-warp.git
-$ cd cf-warp/web
+$ cd cf-warp
 $ npm install
 $ npm start
 ```
@@ -39,7 +39,7 @@ Install and run the CLI version
 
 ```
 $ git clone https://github.com/zurg3/cf-warp.git
-$ cd cf-warp/web
+$ cd cf-warp
 $ npm install
 $ npm run cli
 ```
