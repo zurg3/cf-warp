@@ -60,23 +60,22 @@ A config will be generated in the same directory
 - awg_full (AmneziaWG Full)
 - awg_lite (AmneziaWG Lite)
 - awg_min (AmneziaWG Min)
-- awg_max (AmneziaWG Max)
 
 If `mode` is not provided, a WireGuard config will be generated
 
 ## AmneziaWG config modes
 
-|          | Full   | Lite   | Min   | Max    |
-| -------- | ------ | ------ | ----- | ------ |
-| **Jc**   | 120    | 4      | 4     | 128    |
-| **Jmin** | 23     | 8      | 2     | 1      |
-| **Jmax** | 911    | 32     | 10    | 1280   |
-| **S1**   | 0      | -      | -     | 0      |
-| **S2**   | 0      | -      | -     | 0      |
-| **H1**   | 1      | -      | -     | 1      |
-| **H2**   | 2      | -      | -     | 2      |
-| **H3**   | 3      | -      | -     | 3      |
-| **H4**   | 4      | -      | -     | 4      |
+|          | Full   | Lite   | Min   |
+| -------- | ------ | ------ | ----- |
+| **Jc**   | 120    | 4      | 4     |
+| **Jmin** | 23     | 8      | 2     |
+| **Jmax** | 911    | 32     | 10    |
+| **S1**   | 0      | -      | -     |
+| **S2**   | 0      | -      | -     |
+| **H1**   | 1      | -      | -     |
+| **H2**   | 2      | -      | -     |
+| **H3**   | 3      | -      | -     |
+| **H4**   | 4      | -      | -     |
 
 ## Thanks
 
