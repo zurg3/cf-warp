@@ -60,6 +60,7 @@ A config will be generated in the same directory
 - awg_full (AmneziaWG 1.0 Full)
 - awg_lite (AmneziaWG 1.0 Lite)
 - awg_min (AmneziaWG 1.0 Min)
+- awg_15 (AmneziaWG 1.5)
 
 If `mode` is not provided, a WireGuard config will be generated
 
