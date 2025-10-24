@@ -1,6 +1,6 @@
 {
   "name": "@zurg3/cf-warp",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Cloudflare WARP config generator for WireGuard and AmneziaWG",
   "main": "server.js",
   "bin": {
