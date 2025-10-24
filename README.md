@@ -57,13 +57,13 @@ A config will be generated in the same directory
 ## Available config modes
 
 - wg (WireGuard)
-- awg_full (AmneziaWG Full)
-- awg_lite (AmneziaWG Lite)
-- awg_min (AmneziaWG Min)
+- awg_full (AmneziaWG 1.0 Full)
+- awg_lite (AmneziaWG 1.0 Lite)
+- awg_min (AmneziaWG 1.0 Min)
 
 If `mode` is not provided, a WireGuard config will be generated
 
-## AmneziaWG config modes
+## AmneziaWG 1.0 config modes
 
 |          | Full   | Lite   | Min   |
 | -------- | ------ | ------ | ----- |
