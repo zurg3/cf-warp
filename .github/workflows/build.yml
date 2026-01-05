@@ -24,13 +24,13 @@ jobs:
         run: npm run build-cli
 
       - name: Upload Windows binary
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: cf-warp-win
           path: cf-warp-win.exe
 
       - name: Upload Linux binary
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: cf-warp-linux
           path: cf-warp-linux
