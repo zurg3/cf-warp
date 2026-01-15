@@ -14,13 +14,13 @@ const resovle = (file) => path.join(base_dir, file);
 const write = (file, content) => fs.writeFile(resovle(file), content, 'utf8');
 
 async function get_config() {
-  const mode = args[0];
+  const preset = args[0];
 
   const keys = await generate();
   const data = await register(keys);
   const combined = Object.assign({}, keys, data, await info(data));
 
-  await write('warp.conf', conf(combined, mode));
+  await write('warp.conf', conf(combined, preset));
 }
 
 get_config();

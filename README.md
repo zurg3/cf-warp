@@ -50,11 +50,11 @@ A config will be generated in the same directory
 
 ## Ways to run the CLI version
 
-- `$ cf-warp [mode]`
-- `$ npm run cli [mode]`
-- `$ node cli.js [mode]`
+- `$ cf-warp [preset]`
+- `$ npm run cli [preset]`
+- `$ node cli.js [preset]`
 
-## Available config modes
+## Available config presets
 
 - wg (WireGuard)
 - awg (AmneziaWG 1.0)
@@ -62,7 +62,7 @@ A config will be generated in the same directory
 - awg_15 (AmneziaWG 1.5)
 - awg_15_lite (AmneziaWG 1.5 Lite)
 
-If `mode` is not provided, a WireGuard config will be generated
+If `preset` is not provided, a WireGuard config will be generated
 
 ## Thanks
 

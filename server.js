@@ -24,7 +24,7 @@ app.get('/warp.conf', async (req, res) => {
 
   if (req.query.dl === 'true') res.set('Content-Disposition', 'attachment; filename="warp.conf"');
   res.set('Content-Type', 'text/plain');
-  res.send(conf(combined, req.query.mode));
+  res.send(conf(combined, req.query.preset));
 });
 
 app.listen(port, () => {
